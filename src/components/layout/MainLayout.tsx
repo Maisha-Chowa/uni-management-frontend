@@ -1,9 +1,9 @@
-import { Layout, Menu, theme } from "antd";
+import { Layout, theme } from "antd";
 
-import { adminSidebarItems } from "../../routes/admin.routes";
 import { Outlet } from "react-router-dom";
+import Sidebar from "./Sidebar";
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Footer } = Layout;
 // const items: MenuProps["items"] = [
 //   {
 //     key: "dashboard",
@@ -39,25 +39,7 @@ export default function MainLayout() {
   } = theme.useToken();
   return (
     <Layout style={{ height: "100vh" }}>
-      <Sider
-        breakpoint="lg"
-        collapsedWidth="0"
-        onBreakpoint={(broken) => {
-          console.log(broken);
-        }}
-        onCollapse={(collapsed, type) => {
-          console.log(collapsed, type);
-        }}
-      >
-        <div className="demo-logo-vertical" />
-        <Menu
-          theme="dark"
-          mode="inline"
-          defaultSelectedKeys={["4"]}
-          // items={items}
-          items={adminSidebarItems}
-        />
-      </Sider>
+      <Sidebar />
       <Layout>
         <Header style={{ padding: 0, background: colorBgContainer }} />
         <Content style={{ margin: "24px 16px 0" }}>
