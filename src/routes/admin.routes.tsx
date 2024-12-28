@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 import AdminDashboard from "../pages/admin/AdminDashboard";
-import CreateAdmin from "../pages/admin/CreateAdmin";
-import CreateFaculty from "../pages/admin/CreateFaculty";
-import CreateStudent from "../pages/admin/CreateStudent";
+import CreateAdmin from "../pages/admin/userManagement/CreateAdmin";
+import CreateFaculty from "../pages/admin/userManagement/CreateFaculty";
+import CreateStudent from "../pages/admin/userManagement/CreateStudent";
 import { ReactNode } from "react";
 import AcademicSemester from "../pages/admin/academicManagement/AcademicSemeter";
 import CreateAcademicSemester from "../pages/admin/academicManagement/CreateAcademicSemester";
@@ -10,6 +10,7 @@ import CreateAcademicDepartment from "../pages/admin/academicManagement/CreateAc
 import AcademicDepartment from "../pages/admin/academicManagement/AcademicDepartment";
 import CreateAcademicFaculty from "../pages/admin/academicManagement/CreateAcademicFaculty";
 import AcademicFaculty from "../pages/admin/academicManagement/AcademicFaculty";
+import StudentData from "../pages/admin/userManagement/StudentData";
 
 type TSidebarItem = {
   key: string;
@@ -75,6 +76,11 @@ export const adminPaths = [
         name: "Create Admin",
         path: "create-admin",
         element: <CreateAdmin />,
+      },
+      {
+        name: "Students",
+        path: "students-data",
+        element: <StudentData />,
       },
     ],
   },
